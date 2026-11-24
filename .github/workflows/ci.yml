@@ -29,12 +29,12 @@ jobs:
      with:
        path: public
  deploiement:
-   needs: verification # Attend le succes du premier job
-   runs-on: ubuntu-latest
- environment:
+  needs: verification # Attend le succes du premier job
+  runs-on: ubuntu-latest
+  environment:
    name: github-pages
    url: ${{ steps.deployment.outputs.page_url }}
- steps:
+  steps:
    - name: Deployer le site
      id: deployment
      uses: actions/deploy-pages@v4
